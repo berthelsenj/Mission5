@@ -1,0 +1,17 @@
+﻿@*John Berthelsen*@
+@*Delete HTML page*@
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+@model ApplicationResponse
+
+<h2>Confirm Deletion</h2>
+<h3>Are you sure you want to permanently delete <i>@Model.Title</i>?</h3>
+
+<form method="post" class="special" asp-controller="Home" asp-action="Delete">
+    <button type="submit" class="btn btn-primary" style="background-color: #E63E33;">Delete</button>
+    <a asp-controller="Home" asp-action="MovieList" class="btn btn-primary">Cancel</a>
+
+    <input type="hidden" asp-for="MovieId" />
+</form>

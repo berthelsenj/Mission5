@@ -1,0 +1,57 @@
+﻿@*John Berthelsen*@
+@*Page with form to submit new movies to Joel Hilton's collection*@
+
+@{
+    ViewData["Title"] = "Submit New Movie";
+}
+
+@model Mission4.Models.ApplicationResponse
+
+<h1>Enter a New Movie!</h1>
+
+<div>
+    <form method="post">
+
+        <div asp-validation-summary="All"></div>
+
+        <label asp-for="Category">Category</label><br />
+        <select asp-for="CategoryID">
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+        </select><br /><br />
+
+        <label asp-for="Title">Title</label><br />
+        <input asp-for="Title" required /><br /><br />
+
+        <label asp-for="Year">Year</label><br />
+        <input asp-for="Year" required /><br /><br />
+
+        <label asp-for="Director">Director</label><br />
+        <input asp-for="Director" required /><br /><br />
+
+        <label asp-for="Rating">Rating</label><br />
+        <select asp-for="Rating" required />
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select><br /><br />
+
+        <label asp-for="Edited">Edited</label><br />
+        <select asp-for="Edited" />
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select><br /><br />
+
+        <label asp-for="LentTo">Lent To</label><br />
+        <input asp-for="LentTo" /><br /><br />
+
+        <label asp-for="Notes">Notes</label><br />
+        <input asp-for="Notes" maxlength="25" /><br /><br />
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>

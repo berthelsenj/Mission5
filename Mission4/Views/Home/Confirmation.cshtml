@@ -1,0 +1,22 @@
+﻿@*John Berthelsen*@
+@*Confirmation HTML page that movie was successfully submitted*@
+
+@{
+    ViewData["Title"] = "Movie Submitted";
+}
+
+@model Mission4.Models.ApplicationResponse
+
+@*Use this commented code if you want the submit cshtml to appear different based on inputs*@
+@*@if (Model.Title == '')
+{
+    <h2>Type in a movie next time dummy lol</h2>
+}
+
+else
+{
+    <h2>Thank you, <i>@Model.Title</i> has been submitted!</h2>
+}*@
+
+@*Response to completed movie submission*@
+<h2><i>@Model.Title</i> is now in your movie collection!</h2>
